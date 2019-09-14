@@ -2,7 +2,6 @@ import {getRepository} from "typeorm";
 import {getConnection} from "typeorm";
 import {NextFunction, Request, Response} from "express";
 import {Todo} from "../entity/Todo";
-import { parse } from "path";
 
 export class TodoController {
 

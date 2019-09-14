@@ -97,6 +97,9 @@ export const Routes = [{
 // http://localhost:3000/todos/:id - ** remove 1 record (delete)
 // http://localhost:3000/todos/:id - ** change complete to 1 record (put)
 // http://localhost:3000/todos/updatetodos/:id - ** update description, notes, categories to 1 record (post)
+// http://localhost:3000/getcategorypersonal - ** list all personal (get)
+// http://localhost:3000/getcategorywork - ** list all work (get)
+// http://localhost:3000/getcategoryfamily - ** list all family (get)
 
 
 

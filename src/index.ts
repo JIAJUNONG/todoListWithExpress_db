@@ -6,6 +6,8 @@ import {Request, Response} from "express";
 import {Routes} from "./routes";
 import {User} from "./entity/User";
 
+const PORT = process.env.PORT || 3000
+
 createConnection().then(async connection => {
 
     // create express app
@@ -29,7 +31,7 @@ createConnection().then(async connection => {
     // ...
 
     // start express server
-    app.listen(3000);
+    app.listen(PORT);
 
     // insert new users for test
     await connection.manager.save(connection.manager.create(User, {
