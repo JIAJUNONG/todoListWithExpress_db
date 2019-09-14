@@ -54,13 +54,18 @@ export class TodoController {
     }
 
     async filterCategory(request: Request, response: Response, next: NextFunction) {
-        let markTodo = await this.todoRepository.findOne(request.body.category);
-        await getConnection()
-        .createQueryBuilder()
-        .select("todo")
-        .from(Todo, "todo")
-        .where("todo.category = :category", {category: markTodo.category})
+        let markTodo = await this.todoRepository
+        .createQueryBuilder("todo")
+        .where("todo.category = :category", {category: "Personal"})
         .getMany();
+        //response.send(markTodo);
+        // await getConnection()
+        // .createQueryBuilder()
+        // .select("todo")
+        // .from(Todo, "todo")
+        // .where("todo.category = :category", {category: "request.params.category"})
+        // .execute();
+        response.send(markTodo);
             // if (request.query.category){
             //     let result = []
             //     for (let categories of markTodo){

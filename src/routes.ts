@@ -70,7 +70,7 @@ export const Routes = [{
     action: "updateTodo"
 }, {
     method: "get",
-    route: "/todos/getcategory/:category",
+    route: "/todos/getcategory",
     controller: TodoController,
     action: "filterCategory"
 }
