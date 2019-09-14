@@ -37,6 +37,11 @@ export const Routes = [{
 // - Can mark todo as completed -** done
 // - Can update todo description, notes, categories -** done
 
+//hardcoded
+// - Filter by category -** done
+// - Filter by completed/uncompleted  -** done
+// - Filter by tasks today -** done
+
 
     {
     method: "get",
@@ -70,9 +75,19 @@ export const Routes = [{
     action: "updateTodo"
 }, {
     method: "get",
-    route: "/todos/getcategory",
+    route: "/getcategorypersonal",
     controller: TodoController,
-    action: "filterCategory"
+    action: "filterCategoryPersonal"
+}, {
+    method: "get",
+    route: "/getcategorywork",
+    controller: TodoController,
+    action: "filterCategoryWork"
+}, {
+    method: "get",
+    route: "/getcategoryfamily",
+    controller: TodoController,
+    action: "filterCategoryFamily"
 }
 
 

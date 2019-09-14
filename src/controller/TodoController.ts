@@ -53,30 +53,19 @@ export class TodoController {
             
     }
 
-    async filterCategory(request: Request, response: Response, next: NextFunction) {
-        let markTodo = await this.todoRepository
-        .createQueryBuilder("todo")
-        .where("todo.category = :category", {category: "Personal"})
-        .getMany();
-        //response.send(markTodo);
-        // await getConnection()
-        // .createQueryBuilder()
-        // .select("todo")
-        // .from(Todo, "todo")
-        // .where("todo.category = :category", {category: "request.params.category"})
-        // .execute();
+    async filterCategoryPersonal(request: Request, response: Response, next: NextFunction) {
+        let markTodo = await this.todoRepository.find({category: "Personal"});
         response.send(markTodo);
-            // if (request.query.category){
-            //     let result = []
-            //     for (let categories of markTodo){
-            //         if(categories.category === request.query.category){
-            //             result.push(categories);
-            //         }
-            //     } 
-            //     response.json(result);
-            // } else {
-            //     response.json(markTodo);
-            // }      
+    }
+
+    async filterCategoryWork(request: Request, response: Response, next: NextFunction) {
+        let markTodo = await this.todoRepository.find({category: "Work"});
+        response.send(markTodo);
+    }
+
+    async filterCategoryFamily(request: Request, response: Response, next: NextFunction) {
+        let markTodo = await this.todoRepository.find({category: "Family"});
+        response.send(markTodo);
     }
     
 
